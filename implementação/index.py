@@ -12,8 +12,8 @@ if __name__ == "__main__":
         file = open(file_path, 'r')
         stream = file.read()
     except:
-        stream = "number = 8\n"
-        stream += "\nresult = (8 + 20) - 3 * (5 ** 3) / 55 + sin(number)\n"
+        stream = "number = 9\n"
+        stream += "\nresult = (9 + 20) - 3 * (5 ** 3) / 55 + sin(number)\n"
         stream += "result + 90"
 
     lexer = lexer_compiler.Lexer(stream)
