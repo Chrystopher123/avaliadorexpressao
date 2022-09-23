@@ -20,7 +20,7 @@
 
      - Exemplo: 
 ```
-git clone https://github.com/Chrystopher123/avaliadorexpressao
+git clone https://github.com/chrystopher-santos/avaliadorexpressao
 ```
 4. Por fim, acesso o diretório do projeto recém clonado (`cd implementacao`)
 
