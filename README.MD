@@ -4,11 +4,11 @@
 
 
 
-### Universidade La Salle - Curso de Ciência da Computação
+### Curso de Ciência da Computação | Universidade La Salle
 
 ## Ferramentas utilizadas:
 
-- Python 
+- Python v2022.14.0
 
 ## Setup do projeto
 
