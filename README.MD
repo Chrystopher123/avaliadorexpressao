@@ -1,6 +1,8 @@
 # Lexer + Parser + Interpreter
 
-<img src="https://ruslanspivak.com/lsbasi-part7/lsbasi_part7_pipeline.png" alt="Magento Luma imagem">
+<img width="725" alt="image" src="https://user-images.githubusercontent.com/103464810/191878379-3037e970-8c22-4725-a2b0-41ce46a04f98.png">
+
+
 
 ### Universidade La Salle - Curso de Ciência da Computação
 
