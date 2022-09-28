@@ -1,4 +1,3 @@
-"""A"""
 import sys
 import parser_compiler
 import lexer_compiler
@@ -12,9 +11,9 @@ if __name__ == "__main__":
         file = open(file_path, 'r')
         stream = file.read()
     except:
-        stream = "number = 9\n"
-        stream += "\nresult = (9 + 20) - 3 * (5 ** 3) / 55 + sin(number)\n"
-        stream += "result + 90"
+        stream = "numero = 9\n"
+        stream += "\nresultado = (9 + 20) - 3 * (5 ** 3) / 55 + sin(numero)\n"
+        stream += "resultado + 90"
 
     lexer = lexer_compiler.Lexer(stream)
     tokens = lexer.create_tokens()

@@ -1,5 +1,3 @@
-"""A"""
-
 import math
 
 class SymbolTable:

@@ -1,4 +1,3 @@
-"""A"""
 import types
 import exceptions_compiler
 import symbol_table_compiler
@@ -28,14 +27,14 @@ class Parser:
 
                 if cargo.value == "=":
                     if isinstance(left, type(0)):
-                        raise exceptions_compiler.ParserError(f"Unable to assign a new value to an identifier in line {cargo.line}")
+                        raise exceptions_compiler.ParserError(f"Não é possível atribuir um novo valor a um identificador na linha {cargo.line}")
                     attributes = symbol_table_compiler.Attributes("identifier", right, cargo.line)
                     symbol = symbol_table_compiler.Symbol(left, attributes)
                     self.symbol_table.add(symbol)
                     return None
 
                 if isinstance(left, str):
-                    raise exceptions_compiler.ParserError(f"The identifier {left} was not assigned a value in line {cargo.line}")
+                    raise exceptions_compiler.ParserError(f"O identificador {left} não foi atribuído um valor na linha {cargo.line}")
 
                 if cargo.value in "+-":
                     return left + (right if cargo.value == "+" else right * -1)

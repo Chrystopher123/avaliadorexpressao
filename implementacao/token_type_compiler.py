@@ -1,5 +1,3 @@
-"""A"""
-
 class TokenType:
     """A"""
     NUMBER = 0

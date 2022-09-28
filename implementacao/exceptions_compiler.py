@@ -1,5 +1,3 @@
-"""A"""
-
 class InvalidParameterError(Exception):
     """A"""
 

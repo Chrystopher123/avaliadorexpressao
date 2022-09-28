@@ -1,20 +1,19 @@
-"""Implement a syntax analyzer"""
 import token_type_compiler
 import tree
 import exceptions_compiler
 
 class DerivationTreeGenerator:
-    """Represents a sintax analyzer"""
+    """Representa um analisador de sintaxe"""
     def __init__(self, tokens):
         self.current_index = 0
         self.tokens = tokens
         self.derivation_trees = []
 
     def create_tree(self):
-        """Create the derivation tree"""
+        """Cria a árvore de derivação"""
         program = self.__program()
         if program is None:
-            raise exceptions_compiler.ExpressionError("No derivation tree was generated")
+            raise exceptions_compiler.ExpressionError("Nenhuma árvore de derivação foi gerada")
         return program
 
     def __program(self):
@@ -51,7 +50,7 @@ class DerivationTreeGenerator:
             expression = self.__expression()
             next_token = self.__get_token()
             if not next_token.token_type == token_type_compiler.TokenType.CLOSE_PARENTHESE:
-                raise exceptions_compiler.ExpressionError("Unbalanced parentheses")
+                raise exceptions_compiler.ExpressionError("Parênteses não balanceados")
             self.current_index += 1
             return expression
         if token.token_type == token_type_compiler.TokenType.NUMBER:
@@ -69,10 +68,10 @@ class DerivationTreeGenerator:
                     self.current_index += 1
                     identifier_tree = tree.Tree(token, None, None)
                     return tree.Tree(None, identifier_tree, expression)
-                raise exceptions_compiler.ExpressionError("Unbalanced parentheses")
+                raise exceptions_compiler.ExpressionError("Parênteses não balanceados")
             return tree.Tree(token, None, None)
 
-        raise exceptions_compiler.ExpressionError(f"Unexpected Token: {token.value}")
+        raise exceptions_compiler.ExpressionError(f"Token inesperado: {token.value}")
 
     def __get_identifier(self):
         token = self.__get_token()

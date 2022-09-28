@@ -1,4 +1,3 @@
-"""A"""
 import re
 import token_model
 import exceptions_compiler
@@ -9,7 +8,7 @@ class Lexer:
 
     def __init__(self, stream):
         if stream is None or stream == "":
-            raise exceptions_compiler.InvalidParameterError("stream cannot be empty or null")
+            raise exceptions_compiler.InvalidParameterError("fluxo não pode ser vazio ou nulo")
         self.stream = stream
         self.stream_length = len(stream)
 
@@ -28,7 +27,7 @@ class Lexer:
                 if self.current_index >= self.stream_length:
                     end_of_source_token = self.__create_end_of_source_token(self.current_line)
                     self.tokens.append(end_of_source_token)
-                    raise exceptions_compiler.EndOfSourceError("No more data to read")
+                    raise exceptions_compiler.EndOfSourceError("Não há mais dados para ler")
 
                 character = self.__get_character()
                 self.current_index += 1
@@ -72,7 +71,7 @@ class Lexer:
                     self.current_index += len(lexeme) - 1
                     continue
 
-                raise exceptions_compiler.UnexpectedTokenError(f"Unexpected Token in line {self.current_line}: {lexeme}")
+                raise exceptions_compiler.UnexpectedTokenError(f"Token inesperado na fila {self.current_line}: {lexeme}")
 
         except exceptions_compiler.EndOfSourceError:
             return self.tokens
@@ -102,4 +101,4 @@ class Lexer:
         if self.current_index >= self.stream_length:
             end_of_source_token = self.__create_end_of_source_token(self.current_line)
             self.tokens.append(end_of_source_token)
-            raise exceptions_compiler.EndOfSourceError("No more data to read")
+            raise exceptions_compiler.EndOfSourceError("Não há mais dados para ler")
